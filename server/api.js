@@ -4,7 +4,7 @@ const helmet = require("helmet");
 // const logger = require("../middleware/logger");
 const morgan = require("morgan");
 const cors = require("cors");
-
+//API ROOT
 const apiRouter = require("../routers/api-router");
 // AUTH ROUTER
 const authRouter = require("../routers/auth-router");

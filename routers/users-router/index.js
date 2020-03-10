@@ -54,7 +54,6 @@ router.post("/", async (req, res, next) => {
 //       .json({ message: "error on put/edit request muchacho" });
 //   }
 // });
-
 //DELETE USER
 // router.delete("/:id", async (req, res, next) => {
 //   try {
