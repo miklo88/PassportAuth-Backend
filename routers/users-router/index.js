@@ -37,23 +37,32 @@ router.post("/", async (req, res, next) => {
   console.log(newUser);
 });
 // EDIT USER PUT
-router.put("/:id", async (req, res, next) => {
-  try {
-    const [id] = await db("users")
-      .update(req.params.id, re.body)
-      .then(user => {
-        if (user) {
-          return res.status(200).json(user);
-        } else {
-          return res.status(404).json({ message: "couldn't find user" });
-        }
-      });
-  } catch (err) {
-    return res
-      .status(404)
-      .json({ message: "error on put/edit request muchacho" });
-  }
-});
+// router.put("/:id", async (req, res, next) => {
+//   try {
+//     const [id] = await db("users")
+//       .update(req.params.id, re.body)
+//       .then(user => {
+//         if (user) {
+//           return res.status(200).json(user);
+//         } else {
+//           return res.status(404).json({ message: "couldn't find user" });
+//         }
+//       });
+//   } catch (err) {
+//     return res
+//       .status(404)
+//       .json({ message: "error on put/edit request muchacho" });
+//   }
+// });
 
-//delete user
+//DELETE USER
+// router.delete("/:id", async (req, res, next) => {
+//   try {
+//     await usersModel.remove(req.params.id);
+//     return res.status(204).json({ message: "user deleted/removed" });
+//   } catch (err) {
+//     next(err);
+//   }
+// });
+
 module.exports = router;

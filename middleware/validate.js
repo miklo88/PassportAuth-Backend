@@ -9,6 +9,4 @@ function validateMiddlware(req, res, next) {
   }
 }
 
-module.exports = {
-  validateMiddlware
-};
+module.exports = { validateMiddlware };

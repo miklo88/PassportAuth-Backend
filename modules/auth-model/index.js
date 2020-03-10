@@ -1,7 +1,7 @@
 const db = require("../../database/dbConfig");
 
 async function userAccount(username) {
-  const user = await db("blogdb")
+  const user = await db("users")
     .where({ username })
     .first();
   if (user) {

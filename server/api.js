@@ -7,9 +7,9 @@ const cors = require("cors");
 
 const apiRouter = require("../routers/api-router");
 // AUTH ROUTER
-// const authRouter = require("../routers/auth-router");
-// // USER ROUTER
-// const usersRouter = require("../routers/users-router");
+const authRouter = require("../routers/auth-router");
+// USER ROUTER
+const usersRouter = require("../routers/users-router");
 // // BLOG ROUTER
 // const blogRouter = require("../routers/blog-router");
 
@@ -28,9 +28,9 @@ server.use("/", apiRouter);
 // API ROUTE
 server.use("/api", apiRouter);
 // AUTH ROUTE
-// server.use("/api/auth", authRouter);
+server.use("/api/auth", authRouter);
 // // USER ROUTE
-// server.use("/api/user", usersRouter);
+server.use("/api/users", usersRouter);
 // // BLOG ROUTE
 // server.use("/api/blog", blogRouter);
 

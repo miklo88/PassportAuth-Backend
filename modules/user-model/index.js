@@ -1,5 +1,5 @@
 const bcrypt = require("bcryptjs");
-const db = requrie("../../database/dbConfig");
+const db = require("../../database/dbConfig");
 
 function find() {
   return db("users").select("id", "firstName", "lastName", "username");
