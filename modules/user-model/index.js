@@ -20,8 +20,6 @@ function update(id, changes) {
   return db("users")
     .where({ id })
     .update(changes);
-
-  return findById(id);
 }
 // DELETE
 function remove(id) {
