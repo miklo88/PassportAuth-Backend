@@ -20,7 +20,7 @@ exports.seed = function(knex) {
           id: 2,
           firstname: "Michelle",
           lastname: "Obama",
-          username: "THE_MMO",
+          username: "Classy",
           email: "email@michelle.com",
           password: "testpassword",
           user_photo: "filler for meow2",

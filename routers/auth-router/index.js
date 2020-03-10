@@ -12,7 +12,7 @@ const router = express.Router();
 router.post("/register", async (req, res, next) => {
   try {
     const user = usersModel.add(req.body);
-    return res.status(201).json({ message: "welcome new created user0", user });
+    return res.status(201).json({ message: "welcome new created user", user });
   } catch (err) {
     console.log(err);
     next(err);
@@ -22,7 +22,7 @@ router.post("/register", async (req, res, next) => {
 router.post("/login", validateMiddleware, async (req, res, next) => {
   try {
     let { username, password } = req.body;
-    const user = await authenticationModel.userAccount(email);
+    const user = await authenticationModel.userAccount(username);
     const passwordValid = await bcrypt.compare(password, user.password);
     // if user and password are good then you get token
     console.log(passwordValid, user);

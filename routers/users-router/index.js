@@ -1,6 +1,5 @@
 const express = require("express");
-// userModel import
-
+const userModel = require("../../modules/user-model");
 const router = express.Router();
 
 //GET USER
@@ -19,16 +18,16 @@ router.get("/:id", async (req, res, next) => {
       .findById(req.params.id)
       .where("id", id)
       .first();
-    return res.status(201).json(newUser);
+    return res.status(201).json(userId);
   } catch (err) {
     next(err);
   }
 });
-//ADD NEW USER
+//ADD NEW USER POST
 router.post("/", async (req, res, next) => {
   try {
-    const [id] = await db("blogdb").insert(req.body);
-    const newUser = await db("blogdb")
+    const [id] = await db("users").insert(req.body);
+    const newUser = await db("users")
       .where("id", id)
       .first();
     return res.status(201).json(newUser);
@@ -37,6 +36,24 @@ router.post("/", async (req, res, next) => {
   }
   console.log(newUser);
 });
-// edit user
+// EDIT USER PUT
+router.put("/:id", async (req, res, next) => {
+  try {
+    const [id] = await db("users")
+      .update(req.params.id, re.body)
+      .then(user => {
+        if (user) {
+          return res.status(200).json(user);
+        } else {
+          return res.status(404).json({ message: "couldn't find user" });
+        }
+      });
+  } catch (err) {
+    return res
+      .status(404)
+      .json({ message: "error on put/edit request muchacho" });
+  }
+});
+
 //delete user
 module.exports = router;

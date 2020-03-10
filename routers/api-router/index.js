@@ -3,7 +3,7 @@ const router = express.Router();
 
 //ROOT ROUTER
 router.get("/", async (req, res) => {
-  res.status(200).json({ message: "Welcome to the carlsapp!" });
+  res.status(200).json({ message: "Welcome to the app!" });
 });
 
 // /API/
