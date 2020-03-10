@@ -1,5 +1,5 @@
 //validateMiddlware for login/register
-function validateMiddlware(req, res, next) {
+function validateMiddleware(req, res, next) {
   const { username, password } = req.body;
 
   if (!username || !password) {
@@ -9,4 +9,4 @@ function validateMiddlware(req, res, next) {
   }
 }
 
-module.exports = { validateMiddlware };
+module.exports = validateMiddleware;

@@ -1,7 +1,6 @@
 // EXPRESS MIDDLEWARE
 const express = require("express");
 const helmet = require("helmet");
-// const logger = require("../middleware/logger");
 const morgan = require("morgan");
 const cors = require("cors");
 //API ROOT
@@ -17,8 +16,6 @@ const usersRouter = require("../routers/users-router");
 const server = express();
 
 server.use(helmet());
-// logger is custom middleware
-// server.use(logger());
 server.use(morgan("short"));
 server.use(cors());
 server.use(express.json());
